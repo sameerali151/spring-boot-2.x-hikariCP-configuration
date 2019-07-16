@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  redis:
+    port: 6379
+    host: localhost
+    password:
+  data:
+    mongodb:
+      uri: mongodb://localhost/test
+      username: test
+      password: 123456
+
+hikari:
+  primary:
+    jdbc-url: jdbc:mysql://localhost:3306/xu?useSSL=false
+    username: root
+    password: 1234
+  second:
+    jdbc-url: jdbc:mysql://localhost:3306/hua?useSSL=false
+    username: root
+    password: 1234
+
+management:
+  endpoint:
+    prometheus:
+          enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,prometheus,httptrace
+
+swagger:
+  show: true
+
